@@ -1,0 +1,534 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f8;
+    color: #414242;
+    /* Official Dark Grey */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.top-bar {
+    background: linear-gradient(90deg, #354393 0%, #2a3575 100%);
+    /* Official Main Blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.escudo {
+    font-size: 32px;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.titles h1 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 300;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.titles h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.user-role {
+    opacity: 0.9;
+    font-size: 12px;
+    margin-right: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 10px;
+    font-weight: 300;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: #4AACC4;
+    /* Official Cyan */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 14px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    border-left: 4px solid transparent;
+    color: #414242;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.sidebar li:hover {
+    background: #f8f9fa;
+    color: #354393;
+}
+
+.sidebar li.active {
+    background: #eef1ff;
+    color: #354393;
+    border-left-color: #354393;
+    font-weight: 700;
+}
+
+.sidebar li.separator {
+    height: 1px;
+    background: #eee;
+    margin: 10px 25px;
+    padding: 0;
+    pointer-events: none;
+}
+
+.weather-widget {
+    margin-top: auto;
+    padding: 25px;
+    background: #4AACC4;
+    /* Official Cyan */
+    text-align: center;
+    color: white;
+}
+
+.weather-widget h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.weather-widget .temp {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.weather-widget .desc {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.widgets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.calendar-widget {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    color: #333;
+}
+
+.calendar-widget:hover {
+    transform: scale(1.02);
+}
+
+.cal-header {
+    background: #e01e5a;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.cal-body {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px 0;
+    line-height: 1;
+    color: #414242;
+}
+
+.cal-label {
+    font-size: 10px;
+    color: #666;
+    padding-bottom: 8px;
+    font-weight: 500;
+}
+
+.clock-widget {
+    margin-bottom: 20px;
+    background: #354393;
+    /* Corporate Blue for High Contrast */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #2a3575;
+}
+
+.clock-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(53, 67, 147, 0.2);
+}
+
+#clock-time {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0px;
+    margin-bottom: 2px;
+}
+
+#clock-label {
+    font-size: 11px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Helper to center direct children if they have widths */
+}
+
+.welcome-banner,
+.systems-grid,
+.section-header {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.welcome-banner {
+    background: white;
+    border-top: 4px solid #354393;
+    /* Main Blue */
+    padding: 20px 25px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-banner h3 {
+    margin: 0 0 8px 0;
+    color: #354393;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.welcome-banner p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Systems Grid */
+.systems-grid {
+    display: grid;
+    /* Force 5 columns as requested */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    /* Reduced gap slightly to fit 5 */
+    margin-bottom: 40px;
+    max-width: 1400px;
+    /* Limit width to keep it looking nice */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.system-card {
+    background: white;
+    border-radius: 6px;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-top: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.system-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top-color: #4AACC4;
+    /* Cyan Accent on hover */
+}
+
+.system-card .icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: #f4f6f8;
+    color: #354393;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.system-card:hover .icon {
+    background: #eef1ff;
+    color: #2a3575;
+}
+
+.system-card .card-title {
+    font-weight: 700;
+    color: #414242;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.system-card .card-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* News */
+.news-section {
+    background: white;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.news-section h3 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #354393;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    font-weight: 700;
+}
+
+.news-item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 14px;
+    align-items: center;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item .date {
+    background: #354393;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 11px;
+    margin-right: 15px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.news-item .news-title {
+    color: #414242;
+    font-weight: 400;
+}
+
+/* Corporate Profile Widget */
+.profile-widget.corporate-panel {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    margin: 15px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 11px;
+}
+
+.panel-header {
+    background: #e1e1e1;
+    color: #333;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-content {
+    padding: 10px;
+}
+
+.user-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.user-row .label {
+    color: #666;
+}
+
+.user-row .value {
+    font-weight: bold;
+    color: #333;
+}
+
+.xp-bar-corp {
+    margin-top: 8px;
+}
+
+.xp-unfilled {
+    height: 4px;
+    background: #ddd;
+    border: 1px solid #999;
+    width: 100%;
+}
+
+.xp-filled {
+    height: 100%;
+    background: #666;
+    /* Boring gray/blue */
+    width: 0%;
+}
+
+/* Launcher 2.0 - Sections */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #354393;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-tag {
+    background: #eef1ff;
+    color: #354393;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 15px;
+    text-transform: uppercase;
+}
+
+/* Progress Bars inside Cards */
+.card-progress-container {
+    width: 100%;
+    margin-top: 15px;
+    background: #f0f0f0;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-progress-bar {
+    height: 100%;
+    background: #2bac76;
+    /* Success Green */
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.card-progress-text {
+    font-size: 11px;
+    color: #666;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Score Badge */
+/* Score Badge */
+.card-score-badge {
+    margin-top: 15px;
+    background: #f8f9fa;
+    /* Very light grey */
+    color: #5f6368;
+    /* Google grey */
+    padding: 2px 6px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: 'Consolas', 'Roboto Mono', monospace;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}

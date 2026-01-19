@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal del Agente - Gobierno de San Luis</title>
+    <link rel="stylesheet" href="launcher_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="logo-area">
+            <div class="escudo">🏛️</div>
+            <div class="titles">
+                <h1>Gobierno de la Provincia de San Luis</h1>
+                <h2>Secretaría de Ambiente</h2>
+            </div>
+        </div>
+        <div class="user-area">
+            <span class="user-name">Agente: Vico</span>
+            <span class="user-role">Logística y Movilidad</span>
+            <div class="avatar">V</div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active">Inicio</li>
+                <li>Mis Trámites</li>
+                <li>Expedientes GDE</li>
+                <li>Recibo de Sueldo Digital</li>
+                <li>Normativa Vigente</li>
+                <li class="separator"></li>
+                <li>Soporte Técnico</li>
+                <li>Cerrar Sesión</li>
+            </ul>
+
+            <!-- User Profile Widget (Corporate Style) -->
+            <div class="profile-widget corporate-panel">
+                <div class="panel-header">FICHA DE AGENTE</div>
+                <div class="profile-content">
+                    <div class="user-row">
+                        <span class="label">Agente:</span>
+                        <span class="value">Vico</span>
+                    </div>
+                    <div class="user-row">
+                        <span class="label">Categoría:</span>
+                        <span class="value" id="user-rank">...</span>
+                    </div>
+                    <div class="user-row">
+                        <span class="label">Evaluación:</span>
+                        <span class="value" id="xp-text">Calculando...</span>
+                    </div>
+                    <div class="xp-bar-corp">
+                        <div class="xp-unfilled">
+                            <div class="xp-filled" id="xp-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="widgets-container">
+                <!-- Calendar Widget -->
+                <div id="calendar-widget" class="calendar-widget" title="Clic para ver días hasta vacaciones">
+                    <div class="cal-header" id="cal-month">ENE</div>
+                    <div class="cal-body" id="cal-day">12</div>
+                    <div class="cal-label" id="cal-label">HOY</div>
+                </div>
+
+                <!-- Clock Widget -->
+                <div id="clock-container" class="clock-widget"
+                    title="Clic: Ver tiempo restante | Doble Clic: Configurar hora">
+                    <div id="clock-time">00:00:00</div>
+                    <div id="clock-label">Hora Actual</div>
+                </div>
+            </div>
+            <hr style="opacity:0.3; margin: 15px 0;">
+            <div class="weather-widget">
+                <h3>San Luis Capital</h3>
+                <div class="temp">24°C</div>
+                <div class="desc">Soleado</div>
+            </div>
+        </nav>
+
+        <!-- (Main Content) -->
+        <main class="dashboard">
+            <!-- (Welcome Banner) -->
+            <div class="welcome-banner">
+                <h3>Bienvenido al Portal de Autogestión</h3>
+                <p>Novedades: Se abren las inscripciones para la capacitación obligatoria en "Gestión de Residuos
+                    Electrónicos".</p>
+            </div>
+            <!-- (Systems Grid) -->
+            <div class="launcher-container"
+                style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+
+                <!-- Widgets Section -->
+                <div class="widgets-container">
+                    <!-- Clock, Weather, News -->
+                </div>
+
+                <!-- SECTION 1: PERFORMANCE OBJECTIVES (15 Games - 5x3 Grid) -->
+                <h2 class="section-title"
+                    style="width: 100%; text-align: left; margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 10px; color: #555;">
+                    📋 Objetivos de Desempeño (Prioridad Alta)</h2>
+
+                <div class="grid-container" id="campaign-grid"
+                    style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; width: 100%; margin-bottom: 50px;">
+                    <!-- 1. Spreadsheet Saga -->
+                    <a href="./spreadsheet-saga/index.html" class="system-card" data-game="spreadsheet">
+                        <div class="icon">📊</div>
+                        <div class="card-title">Cierre Fiscal</div>
+                        <div class="card-desc">Balance Anual Consolidado</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 2. System Crash -->
+                    <a href="./system-crash/index.html" class="system-card" data-game="systemcrash">
+                        <div class="icon" style="background: #ffcdd2;">🔨</div>
+                        <div class="card-title">Mantenimiento</div>
+                        <div class="card-desc">Desfragmentación Crítica</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 3. Angry Interns -->
+                    <a href="./angry-interns/index.html" class="system-card" data-game="angryinterns">
+                        <div class="icon" style="background: #fff9c4;">🏗️</div>
+                        <div class="card-title">Auditoría</div>
+                        <div class="card-desc">Pruebas de Resistencia</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 4. RRHH Kombat -->
+                    <a href="./rrhh-kombat/index.html" class="system-card" data-game="rrhh">
+                        <div class="icon" style="background: #ffccbc;">🥊</div>
+                        <div class="card-title">Mediación</div>
+                        <div class="card-desc">Protocolo de Negociación</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 5. Meeting Doom -->
+                    <a href="./meeting-doom/index.html" class="system-card" data-game="doom">
+                        <div class="icon" style="background: #cfd8dc;">☢️</div>
+                        <div class="card-title">Evacuación</div>
+                        <div class="card-desc">Simulacro Obligatorio</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+
+                    <!-- 6. Meeting Tetris -->
+                    <a href="./meeting-tetris/index.html" class="system-card" data-game="tetris">
+                        <div class="icon" style="background: #e8f0fe;">📅</div>
+                        <div class="card-title">Agenda</div>
+                        <div class="card-desc">Optimización de Tiempos</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 7. Salary Negotiator -->
+                    <a href="./salary-negotiator/index.html" class="system-card" data-game="salary">
+                        <div class="icon" style="background: #a5d6a7;">💰</div>
+                        <div class="card-title">Salarial</div>
+                        <div class="card-desc">Revisión de Categoría</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 8. Terminal Tycoon -->
+                    <a href="./terminal-tycoon/index.html" class="system-card" data-game="terminal">
+                        <div class="icon">💻</div>
+                        <div class="card-title">Servidores</div>
+                        <div class="card-desc">Mantenimiento Infra.</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 9. Java Corp -->
+                    <a href="./java-corp/index.html" class="system-card" data-game="java">
+                        <div class="icon">🎓</div>
+                        <div class="card-title">Portal INAP</div>
+                        <div class="card-desc">Capacitación (Java)</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 10. Sudoku (As Logic/Performance Game) -->
+                    <a href="./sudoku/index.html" class="system-card" data-game="sudoku">
+                        <div class="icon" style="background: #e8f5e9;">🔢</div>
+                        <div class="card-title">Conciliación</div>
+                        <div class="card-desc">Integridad de Datos</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+
+                    <!-- 11. Math Exam -->
+                    <a href="./math-exam/index.html" class="system-card" data-game="math">
+                        <div class="icon" style="background: #fdfefe; border: 1px solid #ccc;">📝</div>
+                        <div class="card-title">Certificación</div>
+                        <div class="card-desc">Evaluación Semestral</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 12. English I -->
+                    <a href="./english-class/index.html" class="system-card" data-game="english">
+                        <div class="icon" style="background: #e1f0fa;">🌐</div>
+                        <div class="card-title">Localización</div>
+                        <div class="card-desc">Control de Calidad</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 13. Lab Git -->
+                    <a href="./lab-git/index.html" class="system-card" data-game="git">
+                        <div class="icon" style="background: #252526; color: white; border: 1px solid #555;">🔱</div>
+                        <div class="card-title">Versiones</div>
+                        <div class="card-desc">Gestor de Ramas</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 14. Admin DB -->
+                    <a href="./db-admin/index.html" class="system-card" data-game="sql">
+                        <div class="icon" style="background: #2f3640; color: #fff;">💾</div>
+                        <div class="card-title">Reportes</div>
+                        <div class="card-desc">Generador SQL</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                    <!-- 15. Prog Web -->
+                    <a href="./prog-web/index.html" class="system-card" data-game="web">
+                        <div class="icon" style="background: #e65100; color: white;">🎨</div>
+                        <div class="card-title">Plantillas</div>
+                        <div class="card-desc">Editor CMS</div>
+                        <div class="card-progress-container">
+                            <div class="card-progress-bar" style="width:0%"></div>
+                        </div>
+                        <div class="card-progress-text"><span>Avance</span><span>0%</span></div>
+                    </a>
+                </div>
+
+                <!-- SECTION 2: SYSTEM UTILITIES / ARCADE (10 Games - 5x2 Grid) -->
+                <h2 class="section-title"
+                    style="width: 100%; text-align: left; margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 10px; color: #555;">
+                    ☕ Herramientas de Pausa Activa (Segundo Plano)</h2>
+
+                <div class="grid-container" id="arcade-grid"
+                    style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; width: 100%;">
+                    <!-- 1. Inbox Zero -->
+                    <a href="./inbox-zero/index.html" class="system-card" data-arcade="inbox">
+                        <div class="icon">📧</div>
+                        <div class="card-title">Entradas</div>
+                        <div class="card-desc">Mesa de Entrada</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Pal/Min</div>
+                    </a>
+                    <!-- 2. Slack-a-Mole -->
+                    <a href="./slack-mole/index.html" class="system-card" data-arcade="slack">
+                        <div class="icon">💬</div>
+                        <div class="card-title">Chat Interno</div>
+                        <div class="card-desc">Notificaciones</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Leídos</div>
+                    </a>
+                    <!-- 3. The Shredder -->
+                    <a href="./secure-delete/index.html" class="system-card" data-arcade="shredder">
+                        <div class="icon" style="background: #ffebee;">🗑️</div>
+                        <div class="card-title">Destructor</div>
+                        <div class="card-desc">Cumplimiento GDPR</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> MBs</div>
+                    </a>
+                    <!-- 4. Printer Panic -->
+                    <a href="./printer-panic/index.html" class="system-card" data-arcade="printer">
+                        <div class="icon" style="background: #e3f2fd;">🖨️</div>
+                        <div class="card-title">Impresora</div>
+                        <div class="card-desc">Cola de Impresión</div>
+                        <div class="card-score-badge">⚡ <span class="score-val">0</span> Trabajos</div>
+                    </a>
+                    <!-- 5. Update Manager -->
+                    <a href="./update-manager/index.html" class="system-card" data-arcade="update">
+                        <div class="icon" style="background: #e8f5e9;">🛡️</div>
+                        <div class="card-title">Defender</div>
+                        <div class="card-desc">Actualizaciones</div>
+                        <div class="card-score-badge">⚡ <span class="score-val">0</span>% Seguro</div>
+                    </a>
+                    <!-- 6. Expediente X -->
+                    <a href="./expediente-x/index.html" class="system-card" data-arcade="expediente">
+                        <div class="icon" style="background: #fff3e0;">📂</div>
+                        <div class="card-title">Archivador</div>
+                        <div class="card-desc">Legajos Perdidos</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Archivos</div>
+                    </a>
+                    <!-- 7. Tab Hoarder -->
+                    <a href="./tab-hoarder/index.html" class="system-card" data-arcade="tabs">
+                        <div class="icon" style="background: #e8f0fe;">🌐</div>
+                        <div class="card-title">Recursos</div>
+                        <div class="card-desc">Gestión de Memoria</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Ciclos</div>
+                    </a>
+                    <!-- 8. Mute All -->
+                    <a href="./mute-all/index.html" class="system-card" data-arcade="mute">
+                        <div class="icon" style="background: #e0f2f1;">📹</div>
+                        <div class="card-title">Sala Conf.</div>
+                        <div class="card-desc">Moderación</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Interv.</div>
+                    </a>
+                    <!-- 9. Voodoo Ticket -->
+                    <a href="./voodoo-ticket/index.html" class="system-card" data-arcade="voodoo">
+                        <div class="icon" style="background: #e1bee7;">📋</div>
+                        <div class="card-title">Incidencias</div>
+                        <div class="card-desc">Tickets de Soporte</div>
+                        <div class="card-score-badge">ID: Tickets</div>
+                    </a>
+                    <!-- 10. VPN Tuner -->
+                    <a href="./vpn-tuner/index.html" class="system-card" data-arcade="vpn">
+                        <div class="icon" style="background: #000; color: #0f0; border: 1px solid #0f0;">📡</div>
+                        <div class="card-title">Conectividad</div>
+                        <div class="card-desc">Diagnóstico de Red</div>
+                        <div class="card-score-badge">ID: <span class="score-val">0</span> Mbps</div>
+                    </a>
+                </div>
+
+                <div class="news-section">
+                    <h3>Boletín Informativo - Ambiente</h3>
+                    <div class="news-item">
+                        <span class="date">12 ENE</span>
+                        <span class="news-title">Nuevo plan de fiscalización de canteras en zonas protegidas.</span>
+                    </div>
+                    <div class="news-item">
+                        <span class="date">10 ENE</span>
+                        <span class="news-title">Resolución 452/26: Protocolo para vehículos oficiales.</span>
+                    </div>
+                    <div class="news-item">
+                        <span class="date">08 ENE</span>
+                        <span class="news-title">Recordatorio: Actualización de DDJJ patrimonial antes del 31/01.</span>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    </main>
+    </div>
+
+    <script src="launcher.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* Profile Widget */
+.profile-widget {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #007bff;
+    /* Blue for 'Official' */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.user-rank {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.xp-container {
+    margin-top: 5px;
+}
+
+.xp-bar-bg {
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.xp-text {
+    font-size: 10px;
+    color: #888;
+    text-align: right;
+}
