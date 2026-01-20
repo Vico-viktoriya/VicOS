@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry Interns - Structural Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+        <!-- Header / HUD -->
+        <div class="header-ui">
+            <div class="title">Análisis de Integridad Estructural v9.0</div>
+            <div class="score-panel">
+                Daño Corporativo: <span id="score">0</span> XP
+            </div>
+            <div class="controls">
+                <button onclick="resetLevel()">Reintentar</button>
+                <button onclick="window.location.href='../index.html'">Salir</button>
+            </div>
+        </div>
+
+        <!-- Notification Area -->
+        <div id="message-area" class="message-area hidden">¡NIVEL PURGADO!</div>
+
+        <!-- Game Canvas -->
+        <canvas id="game-canvas" width="900" height="500"></canvas>
+
+        <!-- Legend -->
+        <div class="legend">
+            Drag mouse left to pull back. Release to launch. <br>
+            <strong>Click anywhere while flying to RELOAD instantly.</strong>
+            <br>Targets: 👔 Managers (500pts) | 📁 Files (100pts) | 🥛 Water (200pts)
+        </div>
+    </div>
+
+    <!-- Boss Overlay -->
+    <div id="boss-overlay" class="hidden">
+        <div class="cad-viewer">
+            <div class="cad-header">AutoCAD 2026 - [Planos_Oficina_2026.dwg]</div>
+            <div class="cad-content">
+                <svg width="100%" height="400">
+                    <rect x="50" y="50" width="800" height="300" stroke="white" stroke-width="2" fill="none" />
+                    <line x1="50" y1="150" x2="850" y2="150" stroke="blue" stroke-width="1" />
+                    <line x1="400" y1="50" x2="400" y2="350" stroke="blue" stroke-width="1" />
+                    <text x="60" y="80" fill="gray">Office A1</text>
+                    <text x="420" y="80" fill="gray">Office A2</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
