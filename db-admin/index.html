@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReportGenerator_v4.5.html</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png"
+        href="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar: Objects & Blocks -->
+        <div class="sidebar">
+            <div class="db-browser">
+                <h3>Database Schema</h3>
+                <div class="table-node">
+                    <span class="table-icon">📅</span> EMPLOYEES
+                    <div class="col-list">
+                        <div>- id (PK)</div>
+                        <div>- name</div>
+                        <div>- salary</div>
+                        <div>- dept_id (FK)</div>
+                    </div>
+                </div>
+                <div class="table-node">
+                    <span class="table-icon">🏢</span> DEPARTMENTS
+                    <div class="col-list">
+                        <div>- id (PK)</div>
+                        <div>- name</div>
+                        <div>- location</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block-palette">
+                <h3>Query Blocks</h3>
+                <div class="block-category">Commands</div>
+                <div class="draggable-block command" draggable="true" data-val="SELECT">SELECT</div>
+                <div class="draggable-block command" draggable="true" data-val="FROM">FROM</div>
+                <div class="draggable-block command" draggable="true" data-val="WHERE">WHERE</div>
+                <div class="draggable-block command" draggable="true" data-val="JOIN">JOIN</div>
+                <div class="draggable-block command" draggable="true" data-val="ON">ON</div>
+
+                <div class="block-category">Columns/Values</div>
+                <div class="draggable-block value" draggable="true" data-val="*">*</div>
+                <div class="draggable-block value" draggable="true" data-val="name">name</div>
+                <div class="draggable-block value" draggable="true" data-val="salary">salary</div>
+                <div class="draggable-block value" draggable="true" data-val="EMPLOYEES">EMPLOYEES</div>
+                <div class="draggable-block value" draggable="true" data-val="DEPARTMENTS">DEPARTMENTS</div>
+                <div class="draggable-block value" draggable="true" data-val="> 50000">> 50000</div>
+                <div class="draggable-block value" draggable="true" data-val="= 'Sales'">= 'Sales'</div>
+            </div>
+        </div>
+
+        <!-- Main Workspace -->
+        <div class="workspace">
+            <div class="task-bar">
+                <strong>REQUEST #<span id="req-id">101</span>:</strong>
+                <span id="req-desc">Loading task...</span>
+            </div>
+
+            <div class="query-builder-area" id="drop-zone">
+                <div class="placeholder-text">Drag blocks here to build your query...</div>
+            </div>
+
+            <div class="actions-bar">
+                <button id="run-btn">EXECUTE QUERY</button>
+                <button id="clear-btn">CLEAR</button>
+            </div>
+
+            <div class="results-pane">
+                <h3>Results Preview:</h3>
+                <div id="results-table">
+                    <!-- Results or Errors appear here -->
+                    <div class="no-results">No data loaded.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memo Modal -->
+        <div id="memo-overlay"
+            style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(236, 240, 241, 0.95); z-index:9999; display:flex; justify-content:center; align-items:center;">
+            <div
+                style="background:#fff; width:550px; padding:40px; border:1px solid #bdc3c7; box-shadow:0 10px 30px rgba(0,0,0,0.1); font-family:'Segoe UI', sans-serif;">
+                <h2 style="color:#2c3e50; margin-top:0;">Data Reporting Tool</h2>
+                <p style="color:#7f8c8d;">Secure SQL Interface for Authorized Personnel Only.</p>
+                <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
+                <p><strong>Assignment:</strong> Generate standard reports using the Visual Query Builder.</p>
+                <ul>
+                    <li>Drag blocks from the left sidebar.</li>
+                    <li>Construct valid SQL queries matching the <strong>REQUEST</strong>.</li>
+                    <li>Execute to verify data integrity.</li>
+                </ul>
+                <button onclick="document.getElementById('memo-overlay').remove()"
+                    style="background:#3498db; color:white; border:none; padding:12px 30px; font-size:16px; border-radius:4px; margin-top:20px; cursor:pointer;">ACCESS
+                    DATABASE</button>
+            </div>
+        </div>
+
+        <!-- Boss Key -->
+        <div id="boss-overlay" class="hidden"
+            style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999; background:#fff; padding:30px; box-sizing:border-box; overflow:hidden;">
+            <h2 style="font-family:Arial;"> Quarterly Sales Report - Q3 2025</h2>
+            <table border="1" cellpadding="10"
+                style="border-collapse:collapse; width:100%; font-family:Arial; font-size:12px;">
+                <tr style="background:#ccc;">
+                    <th>Region</th>
+                    <th>Sales Rep</th>
+                    <th>Target</th>
+                    <th>Actual</th>
+                    <th>Variance</th>
+                </tr>
+                <tr>
+                    <td>North America</td>
+                    <td>J. Doe</td>
+                    <td>$100,000</td>
+                    <td>$105,400</td>
+                    <td>+5.4%</td>
+                </tr>
+                <tr>
+                    <td>Europe</td>
+                    <td>A. Smith</td>
+                    <td>$95,000</td>
+                    <td>$92,100</td>
+                    <td>-3.1%</td>
+                </tr>
+                <tr>
+                    <td>Asia Pac</td>
+                    <td>K. Tanaka</td>
+                    <td>$120,000</td>
+                    <td>$128,900</td>
+                    <td>+7.4%</td>
+                </tr>
+                <tr>
+                    <td>LatAm</td>
+                    <td>M. Garcia</td>
+                    <td>$80,000</td>
+                    <td>$81,200</td>
+                    <td>+1.5%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

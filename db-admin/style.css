@@ -1,0 +1,242 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: #f5f6fa;
+    color: #2f3640;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #2f3640;
+    color: #dcdde1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #1e272e;
+}
+
+.db-browser {
+    padding: 15px;
+    background: #1e272e;
+    max-height: 40%;
+    overflow-y: auto;
+    border-bottom: 1px solid #57606f;
+}
+
+.db-browser h3,
+.block-palette h3 {
+    margin-top: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #718093;
+    letter-spacing: 1px;
+}
+
+.table-node {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #f5f6fa;
+}
+
+.col-list {
+    margin-left: 20px;
+    font-size: 11px;
+    font-weight: normal;
+    color: #bdc3c7;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.block-palette {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #2f3640;
+}
+
+.block-category {
+    font-size: 11px;
+    color: #7f8fa6;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+.draggable-block {
+    padding: 8px 12px;
+    background: #353b48;
+    border: 1px solid #57606f;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 13px;
+    color: #fff;
+    cursor: grab;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    user-select: none;
+}
+
+.draggable-block:hover {
+    background: #3f4859;
+    border-color: #718093;
+}
+
+.draggable-block.command {
+    background: #8e44ad;
+    /* Purple for SQL keywords */
+    border-color: #9b59b6;
+}
+
+.draggable-block.value {
+    background: #2980b9;
+    /* Blue for values/cols */
+    border-color: #3498db;
+}
+
+/* Workspace */
+.workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.task-bar {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    font-size: 15px;
+    border-left: 5px solid #e67e22;
+}
+
+#req-desc {
+    color: #555;
+    margin-left: 10px;
+}
+
+.query-builder-area {
+    flex: 1;
+    background: #fff;
+    border: 2px dashed #bdc3c7;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    transition: background 0.2s;
+}
+
+.query-builder-area.drag-over {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+.query-builder-area .draggable-block {
+    cursor: pointer;
+    /* Click to remove in build area */
+    margin: 0;
+}
+
+.placeholder-text {
+    color: #bdc3c7;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    pointer-events: none;
+}
+
+.actions-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#run-btn {
+    padding: 10px 25px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(39, 174, 96, 0.3);
+}
+
+#run-btn:hover {
+    background: #2ecc71;
+}
+
+#clear-btn {
+    padding: 10px 20px;
+    background: #ecf0f1;
+    color: #7f8c8d;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#clear-btn:hover {
+    background: #bdc3c7;
+    color: white;
+}
+
+.results-pane {
+    background: #fff;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    padding: 0;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-pane h3 {
+    background: #f7f9fa;
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #7f8c8d;
+    border-bottom: 1px solid #eee;
+}
+
+#results-table {
+    padding: 15px;
+    overflow-y: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 13px;
+    color: #333;
+}
+
+.no-results {
+    color: #bdc3c7;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-msg {
+    color: #e74c3c;
+}
+
+.success-msg {
+    color: #27ae60;
+}
+
+.hidden {
+    display: none !important;
+}
