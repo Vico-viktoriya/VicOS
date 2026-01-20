@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Archivos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons or just unicode -->
+</head>
+
+<body>
+
+    <div class="window-frame">
+        <div class="title-bar">
+            <span>Explorador de Archivos</span>
+            <div class="window-controls">
+                <button onclick="window.location.href='../index.html'">✕</button>
+            </div>
+        </div>
+
+        <div class="address-bar-row">
+            <div class="address-bar">
+                <span class="addr-icon">📂</span>
+                <span>C:\Escritorio\Archivos_Sin_Clasificar</span>
+            </div>
+            <div class="timer-display" id="timer-display">Tiempo: 60s</div>
+            <div class="score-display" id="score-display">Puntos: 0</div>
+        </div>
+
+        <div class="main-layout sorting-layout">
+
+            <!-- Drop Zones -->
+            <div class="drop-zones">
+                <div class="folder-zone" id="zone-docs" data-type="doc">
+                    <div class="zone-icon">📘</div>
+                    <div class="zone-label">Documentos</div>
+                </div>
+                <div class="folder-zone" id="zone-imgs" data-type="img">
+                    <div class="zone-icon">📷</div>
+                    <div class="zone-label">Imágenes</div>
+                </div>
+                <div class="folder-zone" id="zone-trash" data-type="trash">
+                    <div class="zone-icon">🗑️</div>
+                    <div class="zone-label">Papelera</div>
+                </div>
+            </div>
+
+            <!-- Chaos Area -->
+            <div class="content-area scatter-area" id="scatter-area">
+                <!-- Files spawn here random positions -->
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span>Arrastra los archivos a su carpeta. 📄->📘, 🖼️->📷, ⚙️->🗑️</span>
+        </div>
+    </div>
+
+    <!-- Boss Key Overlay: Just a desktop background or generic folder -->
+    <div id="boss-overlay" class="hidden">
+        <div class="fake-desktop">
+            <!-- Maybe an image of a spreadsheet open -->
+            <div class="center-msg">Revisando planillas...</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

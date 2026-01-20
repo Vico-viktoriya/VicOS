@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://wallpaperhub.app/api/v1/get/1211/0/1080p') no-repeat center center fixed;
+    /* Windows Wallpaper */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+.window-frame {
+    width: 900px;
+    height: 600px;
+    background: white;
+    border: 1px solid #999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    background: white;
+    padding: 8px 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 8px;
+}
+
+.window-controls button:hover {
+    background: #e81123;
+    color: white;
+}
+
+.ribbon-bar {
+    background: #f3f3f3;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    gap: 15px;
+}
+
+.ribbon-btn {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.ribbon-btn.active {
+    background: #e5f3ff;
+    color: #005a9e;
+    font-weight: 600;
+}
+
+.address-bar-row {
+    padding: 8px 10px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+}
+
+.nav-btn:hover {
+    color: black;
+}
+
+.address-bar {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Sorting Layout */
+.sorting-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #eef2f5;
+}
+
+.drop-zones {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    height: 150px;
+}
+
+.folder-zone {
+    width: 120px;
+    height: 120px;
+    border: 3px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.folder-zone.drag-over {
+    border-color: #0078d7;
+    background: #e5f3ff;
+    transform: scale(1.1);
+}
+
+.folder-zone .zone-icon {
+    font-size: 50px;
+}
+
+.folder-zone .zone-label {
+    font-weight: bold;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Colors per zone */
+#zone-docs {
+    border-color: #4285f4;
+}
+
+#zone-imgs {
+    border-color: #34a853;
+}
+
+#zone-trash {
+    border-color: #ea4335;
+}
+
+.scatter-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.draggable-file {
+    position: absolute;
+    width: 70px;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: transform 0.1s;
+    user-select: none;
+}
+
+.draggable-file:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+    z-index: 100 !important;
+}
+
+.draggable-file .icon {
+    font-size: 36px;
+}
+
+.draggable-file .name {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.timer-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-left: auto;
+}
+
+.score-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 20px;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background: #f0f0f0;
+    /* Default sidebar color somewhat */
+    border-right: 1px solid #e5e5e5;
+    padding-top: 10px;
+    overflow-y: auto;
+}
+
+.sidebar-group {
+    margin-bottom: 15px;
+}
+
+.group-title {
+    padding: 5px 15px;
+    font-size: 11px;
+    color: #666;
+    font-weight: 600;
+}
+
+.sidebar-item {
+    padding: 5px 25px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-item:hover {
+    background: #e5f3ff;
+}
+
+.sidebar-item.active {
+    background: #cce8ff;
+    border-left: 3px solid #0078d7;
+    padding-left: 22px;
+}
+
+.stats-panel {
+    margin: 20px 10px;
+    padding: 10px;
+    background: #e1e1e1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.stats-panel h3 {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
+.stat-row {
+    margin-bottom: 3px;
+}
+
+.content-area {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 5px;
+    overflow-y: auto;
+    background: white;
+}
+
+.file-item {
+    width: 80px;
+    height: 90px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.file-item:hover {
+    background-color: #e5f3ff;
+    border-color: #cce8ff;
+}
+
+.file-item .icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.file-item .name {
+    font-size: 12px;
+    word-break: break-all;
+    line-height: 1.2;
+    overflow: hidden;
+    max-height: 2.4em;
+}
+
+/* File Types */
+.folder .icon {
+    color: #fce100;
+}
+
+.file-exe .icon {
+    color: #d32f2f;
+}
+
+/* Enemy */
+.file-zip .icon {
+    color: #9c27b0;
+}
+
+/* Loot */
+.file-pdf .icon {
+    color: #e53935;
+}
+
+/* Quest Item */
+.file-txt .icon {
+    color: #999;
+}
+
+/* Trash */
+
+.status-bar {
+    padding: 5px 15px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 20px;
+}
+
+/* Boss Overlay */
+.hidden {
+    display: none !important;
+}
+
+#boss-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+}
+
+.fake-desktop {
+    width: 100%;
+    height: 100%;
+    background: #0078d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
