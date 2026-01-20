@@ -1,0 +1,235 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: #eef2f5;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Toolbar */
+.toolbar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tool-group button {
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+.tool-group button.active {
+    background: #e1f0fa;
+    color: #0078d4;
+    font-weight: bold;
+}
+
+.status-indicator {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    gap: 15px;
+}
+
+#qa-score {
+    font-weight: bold;
+    color: #217346;
+}
+
+/* Workspace */
+.workspace {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Segment List */
+.segment-list {
+    flex: 2;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.segment-header {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 80px;
+    background: #f3f2f1;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+#segment-container {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.segment-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 80px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.segment-row:hover {
+    background: #f8f9fa;
+}
+
+.segment-row.active {
+    background: #eef7fe;
+    border-left: 3px solid #0078d4;
+}
+
+.segment-row.done {
+    color: #aaa;
+}
+
+.status-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.status-badge.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-badge.approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Editor Pane */
+.editor-pane {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-pane h3 {
+    margin-top: 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.editor-field {
+    margin-bottom: 20px;
+}
+
+.editor-field label {
+    display: block;
+    font-size: 11px;
+    color: #0078d4;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.source-text {
+    font-size: 14px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-btn {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.option-btn:hover {
+    border-color: #0078d4;
+    background: #f3f9fd;
+}
+
+.option-btn.selected {
+    border-color: #0078d4;
+    background: #e1f0fa;
+    font-weight: 500;
+}
+
+.editor-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+#confirm-btn {
+    flex: 1;
+    padding: 10px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#confirm-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#skip-btn {
+    padding: 10px 20px;
+    background: #f3f2f1;
+    border: 1px solid #e1dfdd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
